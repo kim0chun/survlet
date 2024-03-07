@@ -1,7 +1,9 @@
-package com.test.lesson01;
+package com.test.servlet;
 
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.util.HashMap;
+import java.util.Map;
 
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -9,19 +11,25 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 @WebServlet("/lesson01/quiz10")
-public class GetMethodQuiz10 extends HttpServlet {
-
-	@Override
-	public void doGet(HttpServletRequest request,
-			HttpServletResponse response) throws IOException{
-
-		// 입력코드
-		response.setContentType("/text/plain");
-		response.setCharacterEncoding("utf-8");
+public class PostMethodQuiz10 extends HttpServlet {
+	private final Map<String, String> userMap =  new HashMap<>() {
+		{
+			put("id", "marobiana");
+			put("password", "qwerty1234");
+			put("name", "신보람");
+		}
+	};
+	
+	public void doPost(HttpServletRequest request, HttpServletResponse response) throws IOException {
+		//
+		response.setContentType("text/html");
+		//response.setCharacterEncoding("utf-8");   filter
 		
+		// request parameter
 		String id = request.getParameter("id");
 		String password = request.getParameter("password");
 		
+		// 검증 및 출력
 		PrintWriter out = response.getWriter();
 		out.print("<html><head><title>결과</title></head><body>");
 		if (userMap.get("id").equals(id) == false) {
@@ -32,5 +40,5 @@ public class GetMethodQuiz10 extends HttpServlet {
 			out.print(userMap.get("name") + "님 환영합니다!!!");
 		}
 		out.print("</body></html>");
-		}
+	}
 }
