@@ -19,11 +19,14 @@
 		
 		<form action="/lesson02/quiz03_1.jsp" method="get">
 			<div class="d-flex">
-				<input type="text" class="col-2 form-control" name="height" placeholder="키를 입력하세요."> <span class="ml-2 mt-3">cm </span>
-				<input type="text" class="col-2 form-control ml-3" name="weight" placeholder="몸무게를 입력하세요."> <span class="ml-2 mt-3">kg</span>
+				<input type="text" class="col-2 form-control" name="height" placeholder="키를 입력하세요."> 
+				<span class="ml-2 mt-3">cm </span>
+				<input type="text" class="col-2 form-control ml-3" name="weight" placeholder="몸무게를 입력하세요."> 
+				<span class="ml-2 mt-3">kg</span>
 				<input type="submit" class="btn btn-info ml-3" value="계산"> 
 			</div>
 		</form>
 	</div>
-</body>
+	
+s</body>
 </html>

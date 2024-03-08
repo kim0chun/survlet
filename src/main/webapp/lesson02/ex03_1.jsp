@@ -14,6 +14,7 @@
 	String[] foodArr = request.getParameterValues("food"); // 선택 항목 여러개일 때 getParameterValues()
 	String fruit = request.getParameter("fruit");
 %>
+
 <table border=1>
 	<tr>
 		<th>별명</th>
@@ -44,6 +45,7 @@
 					out.print(result);
 				}
 			%>
+			
 		</td>
 	</tr>
 	<tr>
