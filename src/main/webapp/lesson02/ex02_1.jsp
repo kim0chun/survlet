@@ -4,9 +4,9 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Insert title here</title>
+<title> Get Method </title>
 </head>
 <body>
-
+	<a> herf ="/lesson/ex02_1.jsp?id=kim0chun&name=김영춘&age=30"> </a> 
 </body>
 </html>

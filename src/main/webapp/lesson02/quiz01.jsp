@@ -19,6 +19,7 @@
 			return sum;
 		}
 	%>
+
 	<%
 		// 2.점수평균
 		int[] scores = {81, 90, 100, 95, 80};
@@ -27,13 +28,8 @@
 			sum2 += scores[i];
 		}
 		 double average  =  sum2 / (double) scores.length;  
-	%>
-	
-	<h1> 1부터 50까지 합은 <%= getSum(50) %> 입니다</h1>
-	<h1> 점수평균 <%= average %>입니다</h1>
-	
-	<%
-	//3. 채점
+		 
+   		//3. 채점
 		List<String> scoreList 
 		  = Arrays.asList(new String[]{"X", "O", "O", "O", "X", "O", "O", "O", "X", "O"});
 		int score =0;
@@ -42,14 +38,15 @@
 				score += 100 / scoreList.size();
 			}
 		}
+
+		// 4. 나이
+		String birthDay = "20010820";
+		String year = birthDay.substring(0, 4);
+		int age = 2024 - Integer.parseInt(year) + 1;
 	%>
-	<h1> 점수는 <%= score %>점입니다</h1> 
-	<%!
-	// 4. 
-		String birthDay = "20241012" ;
-		String 
-		int age = 2024 - Integer.valueOf 
-	
-	%>
+	<h1>1부터 50까지의 합은 <%=getSum(50)%>입니다.</h1>
+	<h1>평균 점수는 <%=average%>입니다.</h1>
+	<h1>채점 결과는 <%=score%>점 입니다.</h1>
+	<h1><%=birthDay%>의 나이는 <%=age%>세 입니다.</h1>
 </body>
 </html>
