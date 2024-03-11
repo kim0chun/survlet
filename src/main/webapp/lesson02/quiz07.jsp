@@ -14,16 +14,16 @@
 <body>
 	<div class="container">
 		<h1>메뉴 검색</h1>
-		<form method="post" action="/lesson02/quiz07_1.jsp">
-			<div class="d-flex">
-				<input type="text" class="form-control col-3" name="keyword">
-				<label class="ml-2 mt-2">
-					<input type="checkbox" name="starPointFilter" value="true">
+		<form method="post" action="/lesson02/quiz07_1.jsp">     
+			<div class="d-flex  align-items-center">    	       <!-- <div class="d-flex"는 name="keyword"와 value="true-체크를  핝줄로 만들기 -->
+				<input type="text" class="form-control col-3 mr-3" name="keyword">   
+				<label class="ml-2 mt-2">   
+					<input type="checkbox" name="starPointFilter" value="true-체크">  <!-- value="true-체크" 아무말이이나 -->
 					4점 이하 제외
 				</label>
 			</div>
 			
-			<input type="submit" class="btn btn-success mt-3" value="검색">
+			<input type="submit" class="btn btn-success mt-3" value="검색">    <!-- 반드시 type="submit" -->
 		</form>
 	</div>
 </body>

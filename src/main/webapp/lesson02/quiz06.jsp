@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@ page import="java.util.*" %>
 <%@ page import="java.util.List" %>
 <%@ page import="java.util.Arrays" %>
 <!DOCTYPE html>
@@ -14,6 +15,7 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
 </head>
+
 <body>
 	<div class="container">
 		<h1 class="text-center mt-4">장보기 목록</h1>
@@ -26,15 +28,15 @@
 			</thead>
 			<tbody>
 			<%
-				List<String> goodsList = Arrays.asList(new String[]{ 
+				List<String> goodsList = Arrays.asList(new String[]{   //java.util.ArrayList가 아님..
 					"저지방 우유", "요플레 4개", "딸기 1팩", "삼겹살 300g", "생수 6개", "주방 세제"
 				});
-			
-				for (int i = 0; i < goodsList.size(); i++) {
+
+				for (int i = 0; i < goodsList.size(); i++) {   //어래이 사이즈 크기로
 			%>
 				<tr>
-					<td><%= i + 1 %></td>
-					<td><%= goodsList.get(i) %></td>
+					<td><%= i + 1 %></td>				   <!-- i++로 하면 저장되어 위쪽 i++에 영향을 줌 -->
+					<td><%= goodsList.get(i) %></td>       <!-- get()으로 -->
 				</tr>
 			<%
 				}

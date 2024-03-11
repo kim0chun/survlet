@@ -15,25 +15,25 @@
 <body>
 <%
 // 메뉴 데이터
-List<Map<String, Object>> list = new ArrayList<>();
-Map<String, Object> map = new HashMap<String, Object>() {{ put("name", "버거킹"); put("menu", "햄버거"); put("point", 4.3); } };
-list.add(map);
-map = new HashMap<String, Object>() {{ put("name", "BBQ"); put("menu", "치킨"); put("point", 3.8); } };
-list.add(map);
-map = new HashMap<String, Object>() {{ put("name", "교촌치킨"); put("menu", "치킨"); put("point", 4.1); } };
-list.add(map);
-map = new HashMap<String, Object>() {{ put("name", "도미노피자"); put("menu", "피자"); put("point", 4.5); } };
-list.add(map);
-map = new HashMap<String, Object>() {{ put("name", "맥도날드"); put("menu", "햄버거"); put("point", 3.8); } };
-list.add(map);
-map = new HashMap<String, Object>() {{ put("name", "BHC"); put("menu", "치킨"); put("point", 4.2); } };
-list.add(map);
-map = new HashMap<String, Object>() {{ put("name", "반올림피자"); put("menu", "피자"); put("point", 4.3); } };
-list.add(map);
+	List<Map <String, Object>> list = new ArrayList<>();
+	Map<String, Object> 
+	map = new HashMap<String, Object>() {{ put("name", "버거킹"); put("menu", "햄버거"); put("point", 4.3); } };
+	list.add(map); 
+	map = new HashMap<String, Object>() {{ put("name", "BBQ"); put("menu", "치킨"); put("point", 3.8); } };
+	list.add(map);
+	map = new HashMap<String, Object>() {{ put("name", "교촌치킨"); put("menu", "치킨"); put("point", 4.1); } };
+	list.add(map);
+	map = new HashMap<String, Object>() {{ put("name", "도미노피자"); put("menu", "피자"); put("point", 4.5); } };
+	list.add(map);
+	map = new HashMap<String, Object>() {{ put("name", "맥도날드"); put("menu", "햄버거"); put("point", 3.8); } };
+	list.add(map);
+	map = new HashMap<String, Object>() {{ put("name", "BHC"); put("menu", "치킨"); put("point", 4.2); } };
+	list.add(map);
+	map = new HashMap<String, Object>() {{ put("name", "반올림피자"); put("menu", "피자"); put("point", 4.3); } };
+	list.add(map);
 %>
-
 	<div class="container">
-		<h1 class="text-center">검색 결과</h1>
+		<h1 class="text-center mt-4">검색 결과</h1>
 		<table class="table text-center">
 			<thead>
 				<tr>
@@ -45,19 +45,19 @@ list.add(map);
 			<tbody>
 			<%
 				String keyword = request.getParameter("keyword");
-				// 체크 안함: null, 체크 함: "true"
+				// 체크 안함: null, 체크 함: "true-체크"
 				String starPointFilter = request.getParameter("starPointFilter");
 				boolean exclude = starPointFilter != null; // 체크됨 (4점 이하 제외)
 				
-				for (Map<String, Object> item : list) {
+				for (Map<String, Object> item : list) {    
 					if (keyword.equals(item.get("menu"))) {
-						// skip 조건이 체크되어 있고 스킵되어야 하는 경우는 continue
-						if (exclude && (double) item.get("point") <= 4.0) {
+						// skip 조건이 체크되어("true") 있고 스킵되어야 하는 경우는 continue
+						if (exclude && (double) item.get("point") <= 4.0) {    //"point"는 Object는 문자취급하므로 숫자로 변환
 							continue;
 						}
 			%>
 						<tr>
-							<td><%= item.get("menu") %></td>
+							<td><%=starPointFilter %>::&::키워드=<%=keyword %>::검색=><%= item.get("menu") %></td>  
 							<td><%= item.get("name") %></td>
 							<td><%= item.get("point") %></td>
 						</tr>

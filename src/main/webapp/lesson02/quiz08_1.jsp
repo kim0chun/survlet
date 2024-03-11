@@ -16,7 +16,9 @@
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
 <%
 	List<Map<String, Object>> list = new ArrayList<>();
-	Map<String, Object> map = new HashMap<String, Object>() {
+	Map<String, Object> 
+	
+	map = new HashMap<String, Object>() {
 		{ 
 			put("id", 1000);
 			put("title", "아몬드"); 
@@ -66,6 +68,7 @@
 		// 테이블에 보여줄 책정보(target) 뽑아내기
 		int id = Integer.parseInt(request.getParameter("id"));
 		Map<String, Object> target = new HashMap<>();
+		
 		for (Map<String, Object> item : list) {
 			if ((Integer) item.get("id") == id) {
 				target = item;

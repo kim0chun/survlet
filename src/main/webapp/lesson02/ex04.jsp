@@ -12,6 +12,7 @@
 	// Map을 테이블로 표현하기
 	// {"korean"=85, "english"=72, "math"=90, "science"=100}
 	// java.util.* 패키지를 import 해야한다.
+	
 	Map<String, Integer> scoreMap = new HashMap<>();
 	scoreMap.put("korean", 85);
 	scoreMap.put("english", 72);
@@ -19,7 +20,7 @@
 	scoreMap.put("science", 100);
 %>
 
-	<table border=1>
+	<table border="1">     <!-- <table border=1> -->
 		<%
 		Iterator<String> iter = scoreMap.keySet().iterator();
 		while (iter.hasNext()) {
@@ -27,7 +28,6 @@
 		%>
 		<tr>
 			<th>
-				<%-- <%= key %> --%>
 				<%
 				if (key.equals("korean")) {
 					out.print("국어");
@@ -43,7 +43,7 @@
 			<td><%=scoreMap.get(key) %></td>
 		</tr>
 		<%
-		}
+		}   // while문 끝
 		%>
 	</table>
 

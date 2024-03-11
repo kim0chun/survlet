@@ -16,7 +16,8 @@
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
 <%
 	List<Map<String, Object>> list = new ArrayList<>();
-	Map<String, Object> map = new HashMap<String, Object>() {
+	Map<String, Object> 
+	map = new HashMap<String, Object>() {
 		{ 
 			put("id", 1000);
 			put("title", "아몬드"); 
@@ -61,7 +62,11 @@
 	list.add(map);
 %>
 </head>
+
+
 <body>
+
+	<!-- 본래 영역 -->
 	<div class="container">
 		<h1 class="text-center mt-4">책 목록</h1>
 		<table class="table text-center">
