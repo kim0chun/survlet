@@ -64,7 +64,8 @@
 			if (category == null || item.get("category").equals(category)) {
 		%>
 		<tr>
-			<td><%=category %>==><%=item.get("ch")%></td>       <!-- key = "id" -->
+			<!-- <td><%=category %>==><%=item.get("ch")%></td>  카테고리별 조회가 안되네요!!!-->
+			<td><%=item.get("ch")%></td>    
 			<td><%=item.get("name")%></td>
 			<td><%=item.get("category")%></td>
 		</tr>
