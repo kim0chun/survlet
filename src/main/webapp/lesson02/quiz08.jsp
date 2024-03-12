@@ -75,7 +75,7 @@
 					<th>id</th>
 					<th>표지</th>
 					<th>제목</th>
-				</tr>
+				</tr> 
 			</thead>
 			<tbody>
 			<%

@@ -67,22 +67,27 @@
 	<%
 		// 테이블에 보여줄 책정보(target) 뽑아내기
 		int id = Integer.parseInt(request.getParameter("id"));
+		// out.print(id);
+		// 책정보 출력을 위해  map으로 저장
 		Map<String, Object> target = new HashMap<>();
-		
+
 		for (Map<String, Object> item : list) {
 			if ((Integer) item.get("id") == id) {
 				target = item;
 				break;
 			}
 		}
+	    //out.print(target);
 	%>
+
+	<!-- 원래 -->
 	<div class="container">
 		<div class="d-flex">
 			<div>
 				<img src="<%=target.get("image") %>" width="300">
 			</div>
 			<div class="ml-3">
-				<span class="display-1 font-weight-bold d-block"><%=target.get("title") %></span>
+				<span class="display-1 font-weight-bold d-block"><%=target.get("title") %></span>      <!-- d-block  -->
 				<span class="display-3 text-info d-block"><%=target.get("author") %></span>
 				<span class="display-4 text-secondary d-block"><%=target.get("publisher") %></span>
 			</div>
