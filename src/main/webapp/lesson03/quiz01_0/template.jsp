@@ -24,16 +24,16 @@
 <body>
 	<div id="wrap" class="container bg-secandary">
 		<header class="d-flex justify-content-center align-items-center">
-			<jsp:include page="header.jsp" />         <%--동적 테그 --%>
+			<jsp:include page="header0.jsp" />         <%--동적 테그 --%>
 		</header>
 		<nav class="bg-danger d-flex align-items-center">
-			<jsp:include page="menu.jsp" />
+			<jsp:include page="menu0.jsp" />
 		</nav>
 		<section class="contents">
-			<jsp:include page="content.jsp" />
+			<jsp:include page="content0.jsp" />
 		</section>
 		<footer class="d-flex justify-content-center align-items-center">
-			<jsp:include page="footer.jsp" />
+			<jsp:include page="footer0.jsp" />
 		</footer>
 	</div>
 

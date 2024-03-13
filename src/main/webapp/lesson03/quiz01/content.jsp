@@ -1,12 +1,6 @@
-<%@page import="java.util.HashMap"%>
-<%@page import="java.util.Map"%>
-<%@page import="java.util.ArrayList"%>
-<%@page import="java.util.List"%>
-
+<%@page import="java.util.*"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
-
-
+	pageEncoding="UTF-8"%>
 <%
     List<Map<String, String>> list = new ArrayList<>();
     Map<String, String> map = new HashMap<String, String>() {{ put("ch", "5"); put("name", "SBS"); put("category", "지상파"); } };
@@ -59,13 +53,12 @@
 		<%
 		String category = request.getParameter("category"); // 지상파
 
-		for (Map<String, String> item : list) {     // item이라는 이름으로 list를 담는다
-			// 카테고리"category"가 null일 때(전체) 또는(||) 카테고리명"category"이 일치할 때
+		for (Map<String, String> item : list) {
+			// 카테고리가 null일 때(전체) 또는 카테고리명이 일치할 때
 			if (category == null || item.get("category").equals(category)) {
 		%>
 		<tr>
-			<!-- <td><%=category %>==><%=item.get("ch")%></td>  카테고리별 조회가 안되네요!!!-->
-			<td><%=item.get("ch")%></td>    
+			<td><%=item.get("ch")%></td>
 			<td><%=item.get("name")%></td>
 			<td><%=item.get("category")%></td>
 		</tr>
