@@ -86,10 +86,12 @@
 	// 상세 정보를 보여줄 target 세팅
 	Map<String, Object> target = null;
 
+
 	// 1. 목록에서 클릭한 경우 (id값)
 	if (request.getParameter("id") != null) {
 		Integer paramId = Integer.valueOf(request.getParameter("id"));
-		//out.print(":::::::::::##########" + paramId);
+		out.print(":::::::::::##########" + paramId);
+		
 		for (Map<String, Object> music : musicList) {
 			Integer id = (Integer) music.get("id");
 			if (id.equals(paramId)) {
@@ -102,7 +104,8 @@
 	// 2. 상단에서 검색한 경우 (search값)
 	if (request.getParameter("search") != null) {
 		String paramSearch = request.getParameter("search");
-		// out.print("::::::::::: " + paramSearch);
+		out.print("::::::::::: " + paramSearch);
+		
 		for (Map<String, Object> music : musicList) {
 			String title = (String) music.get("title");
 			if (title.equals(paramSearch)) {

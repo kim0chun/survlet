@@ -90,14 +90,14 @@
 		<div class="singer-photo mr-4">
 			<img src="<%=artistInfo.get("photo") %>" alt="가수 이미지" width="150">
 		</div>
-		<div class="singer-info">
+		<div class="singer-info ml-3">
 			<h3><%=artistInfo.get("name") %></h3>
 			<div><%=artistInfo.get("agency") %></div>
-			<div><%=artistInfo.get("debute") %></div>
+			<div><%=artistInfo.get("debute") %> 데뷔</div>
 		</div>
 	</div>
 	
-	<%-- 곡 목록 영역 --%>
+	<%-- 아이유 곡 목록 리스트 영역 --%>
 	<div class="music-list mt-3">
 		<h4>곡 목록</h4>
 		<table class="table text-center">
@@ -110,11 +110,12 @@
 			</thead>
 			<tbody>
 				<%
-					for (Map<String, Object> info : musicList) {
+					for (Map<String, Object> info : musicList) {    
 				%>
 				<tr>
-					<td><%=info.get("id") %></td>
+					<td><%=info.get("id") %></td>  	
 					<td><a href="info_template.jsp?id=<%=info.get("id") %>"><%=info.get("title") %></a></td>
+					<%-- <td><a href="/lesson03/quiz02/info_template.jsp?id=<%=info.get("id") %>"><%=info.get("title") %></a></td> --%>
 					<td><%=info.get("album") %></td>
 				</tr>
 				<%
