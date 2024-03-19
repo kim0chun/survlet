@@ -15,15 +15,14 @@ public class UrlMappingQuiz04 extends HttpServlet {
 	public void doGet(HttpServletRequest request,
 			HttpServletResponse response) throws IOException {
 		
-		//
+		response.setContentType("text/html");
+		response.setCharacterEncoding("utf-8");
+		
 		PrintWriter out = response.getWriter();
-		out.print("<html><head><title>Quiz04 </title> </head> </body><ul>");
-		
-		for (int i = 1 ; i <= 30 ; i++) {
-			out.println( "<li>" + i + "번째 리스트 </li>" );
+		out.print("<html><head><title>Quiz04</title></head><body><ul>");
+		for (int i = 1; i <= 30; i++) {
+			out.print("<li>" + i + "번째 리스트</li>");
 		}
-		
 		out.print("</ul></body></html>");
 	}
-
 }

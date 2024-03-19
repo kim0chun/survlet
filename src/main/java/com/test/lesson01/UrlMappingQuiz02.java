@@ -13,15 +13,18 @@ public class UrlMappingQuiz02 extends HttpServlet {
 	
 	@Override
 	public void doGet(HttpServletRequest request,
-			HttpServletResponse response)  throws IOException {
+			HttpServletResponse response) throws IOException {
 		
-		// 한글깨짐 방지
-		response.setContentType("text/plain");
+		// 한글 깨짐 방지
 		response.setCharacterEncoding("utf-8");
+		response.setContentType("text/plain");
 		
-		Date now = new Date();
-		SimpleDateFormat sdf=new SimpleDateFormat("현재 시간은 HH시 mm분 ss초 입니다.");
+		// 날짜 생성
+		//Date now = new Date();
+		
+		// 출력 - 현재 시간은 14시 52분 43초 입니다.
+		SimpleDateFormat sdf = new SimpleDateFormat("현재 시간은 HH시 mm분 ss초 입니다.");
 		PrintWriter out = response.getWriter();
-		out.println(sdf.format(now));
+		out.println(sdf.format(new Date()));
 	}
 }

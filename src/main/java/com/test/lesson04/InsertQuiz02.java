@@ -1,4 +1,4 @@
-package com.test.lesson04.Quiz02;
+package com.test.lesson04;
 
 import java.io.IOException;
 import java.sql.SQLException;
@@ -8,8 +8,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-// import com.common.MysqlService;
-import com.mysql.cj.MysqlType;
+import com.test.common.MysqlService;
 
 @WebServlet("/lesson04/quiz02_insert")
 public class InsertQuiz02 extends HttpServlet {
@@ -17,7 +16,7 @@ public class InsertQuiz02 extends HttpServlet {
 		String name = request.getParameter("name");
 		String url = request.getParameter("url");
 		
-		MysqlType mysqlService = mysqlService.getInstance(); // DB 연결을 위한 객체 생성(싱글턴이라 한개만 생성됨)
+		MysqlService mysqlService = MysqlService.getInstance(); // DB 연결을 위한 객체 생성(싱글턴이라 한개만 생성됨)
 		mysqlService.connect(); // DB 연결
 		
 		//-- 쿼리 수행

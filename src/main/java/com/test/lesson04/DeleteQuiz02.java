@@ -1,4 +1,4 @@
-package com.test.lesson04.Quiz02;
+package com.test.lesson04;
 
 import java.io.IOException;
 import java.sql.SQLException;
@@ -8,7 +8,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import com.test.lesson04.MysqlService;
+import com.test.common.MysqlService;
 
 @WebServlet("/lesson04/quiz02_delete")
 public class DeleteQuiz02 extends HttpServlet {
@@ -29,6 +29,6 @@ public class DeleteQuiz02 extends HttpServlet {
 		mysqlService.disconnect(); // DB 해제
 
 		// 목록 화면 이동
-		response.sendRedirect("/lesson04/quiz02/bookmarkList.jsp");
+		response.sendRedirect("/lesson04/quiz02/quiz02.jsp");
 	}
 }
